@@ -1,0 +1,51 @@
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.Xdefaults: Xdefaults
+#    ~/.clang-format: clang-format
+    ~/.dir_colors: dir_colors
+#    ~/.git_template: git_template/
+    ~/.gitconfig: gitconfig
+    ~/.inputrc: inputrc
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux/
+#    ~/.vim:
+#        force: true
+#        path: vim/
+#    ~/.vimrc: vimrc
+#    ~/.config/nvim:
+#        force: true
+#        path: vim/
+#    ~/.config/nvim/init.vim: vimrc
+#    ~/.vimrc_minimal: vimrc_minimal
+#    ~/.ycm_extra_conf.py: ycm_extra_conf.py
+    ~/bin: bin/
+    ~/.bash: bash/
+    ~/.bashrc:
+        force: true
+        path: bashrc
+    ~/.fzf: fzf/
+
+- shell:
+  - [git submodule update --init --recursive, Updating submodules]
+  - command: ./fzf/install --key-bindings --completion --no-update-rc
+    stdin: true
+    stdout: true
+    stderr: true
+  - command: ./fonts/install.sh
+    stdin: true
+    stdout: true
+    stderr: true
+#  - command: vim +PlugUpdate +PlugUpgrade +qall
+#    stdin: true
+#    stdout: true
+#    stderr: true
+#  - command: scripts/ycm_regular_install.sh &
+#    stdin: true
+#    stdout: true
+#    stderr: true
+  - command: scripts/install_tmux_plugins.sh
+    stdin: true
+    stdout: true
+    stderr: true

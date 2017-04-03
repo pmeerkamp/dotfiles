@@ -1,0 +1,12 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
